@@ -14,7 +14,6 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
-print(f"yoo basedirnya {BASE_DIR}")
 
 
 
@@ -38,6 +37,7 @@ INSTALLED_APPS = [
     "allauth.account", 
     "allauth.socialaccount",
     "dj_rest_auth.registration",
+    "account"
 ]
 
 SITE_ID = 1
@@ -132,3 +132,5 @@ REST_AUTH = {
     'JWT_AUTH_COOKIE': 'my-app-auth',
     'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-token',
 }
+AUTH_USER_MODEL = "calma_account.User"
+ACCOUNT_EMAIL_VERIFICATION = 'none'
